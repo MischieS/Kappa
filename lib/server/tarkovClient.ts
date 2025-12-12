@@ -7,7 +7,10 @@ const REF_CACHE_DIR = process.env.REF_CACHE_DIR
   : path.join(process.cwd(), 'lib', 'ref-cache');
 
 async function ensureCacheDir() {
-  await fs.mkdir(REF_CACHE_DIR, { recursive: true }).catch(() => undefined);
+  await fs.mkdir(REF_CACHE_DIR, { recursive: true }).catch((error) => {
+    console.error('Failed to ensure ref cache dir', { dir: REF_CACHE_DIR, error });
+    return undefined;
+  });
 }
 
 async function readRefCache<T>(fileName: string): Promise<T | null> {
@@ -15,7 +18,10 @@ async function readRefCache<T>(fileName: string): Promise<T | null> {
     const fullPath = path.join(REF_CACHE_DIR, fileName);
     const raw = await fs.readFile(fullPath, 'utf8');
     return JSON.parse(raw) as T;
-  } catch {
+  } catch (error) {
+    if ((error as any)?.code !== 'ENOENT') {
+      console.error('Failed to read ref cache', { dir: REF_CACHE_DIR, fileName, error });
+    }
     return null;
   }
 }
@@ -25,7 +31,8 @@ async function writeRefCache(fileName: string, data: unknown): Promise<void> {
     await ensureCacheDir();
     const fullPath = path.join(REF_CACHE_DIR, fileName);
     await fs.writeFile(fullPath, JSON.stringify(data, null, 2), 'utf8');
-  } catch {
+  } catch (error) {
+    console.error('Failed to write ref cache', { dir: REF_CACHE_DIR, fileName, error });
     // cache failures should not break the request path
   }
 }
@@ -41,7 +48,17 @@ async function fetchGraphQL(query: string, variables?: Record<string, unknown>):
   const json = await response.json().catch(() => null);
 
   if (!response.ok || !json) {
-    throw new Error('Tarkov.dev request failed');
+    throw new Error(
+      `Tarkov.dev request failed (status=${response.status}, ok=${response.ok}, hasJson=${Boolean(json)})`,
+    );
+  }
+
+  if (Array.isArray((json as any)?.errors) && (json as any).errors.length > 0) {
+    const messages = (json as any).errors
+      .map((err: any) => String(err?.message ?? '').trim())
+      .filter(Boolean)
+      .join('; ');
+    throw new Error(messages ? `Tarkov.dev GraphQL errors: ${messages}` : 'Tarkov.dev GraphQL errors');
   }
 
   return json;
@@ -52,7 +69,8 @@ const CACHE_TTL = 24 * 60 * 60 * 1000; // 24 hours
 async function getCachedOrFetch<T>(
   fileName: string,
   fetchFn: () => Promise<T>,
-  ttl: number = CACHE_TTL
+  ttl: number = CACHE_TTL,
+  isCacheValid: (data: T) => boolean = () => true
 ): Promise<T> {
   try {
     const fullPath = path.join(REF_CACHE_DIR, fileName);
@@ -61,7 +79,7 @@ async function getCachedOrFetch<T>(
     // If cache exists and is fresh
     if (stats && (Date.now() - stats.mtimeMs < ttl)) {
       const cached = await readRefCache<T>(fileName);
-      if (cached) return cached;
+      if (cached && isCacheValid(cached)) return cached;
     }
   } catch (e) {
     // Ignore cache read errors, proceed to fetch
@@ -75,9 +93,16 @@ async function getCachedOrFetch<T>(
     console.error(`Failed to fetch fresh data for ${fileName}, trying fallback to stale cache.`, error);
     // Fallback to stale cache if fetch fails
     const cached = await readRefCache<T>(fileName);
-    if (cached) return cached;
+    if (cached && isCacheValid(cached)) return cached;
     throw error;
   }
+}
+
+function normalizeGraphQLList(value: any): any[] {
+  if (Array.isArray(value)) return value;
+  if (value && Array.isArray(value.nodes)) return value.nodes;
+  if (value && Array.isArray(value.edges)) return value.edges.map((edge: any) => edge?.node).filter(Boolean);
+  return [];
 }
 
 const TASKS_REF_QUERY = `
@@ -278,28 +303,29 @@ const HIDEOUT_STATIONS_REF_QUERY = `
 `;
 
 export async function getTasksRef(): Promise<any[]> {
-  return getCachedOrFetch('tasks.json', async () => {
+  return getCachedOrFetch(
+    'tasks.json',
+    async () => {
     const result = await fetchGraphQL(TASKS_REF_QUERY);
-    const tasksField = (result as any)?.data?.tasks;
-    return Array.isArray(tasksField) ? tasksField : [];
-  });
+      const tasksField = (result as any)?.data?.tasks;
+      return normalizeGraphQLList(tasksField);
+    },
+    CACHE_TTL,
+    (data) => Array.isArray(data) && data.length > 0,
+  );
 }
 
 export async function getHideoutStationsRef(): Promise<any[]> {
-  return getCachedOrFetch('hideoutStations.json', async () => {
+  return getCachedOrFetch(
+    'hideoutStations.json',
+    async () => {
     const result = await fetchGraphQL(HIDEOUT_STATIONS_REF_QUERY);
-    let stationsField: any = (result as any)?.data?.hideoutStations;
-
-    if (!Array.isArray(stationsField)) {
-      if (Array.isArray(stationsField?.nodes)) {
-        stationsField = stationsField.nodes;
-      } else if (Array.isArray(stationsField?.edges)) {
-        stationsField = stationsField.edges.map((edge: any) => edge?.node).filter(Boolean);
-      }
-    }
-
-    return Array.isArray(stationsField) ? stationsField : [];
-  });
+      const stationsField: any = (result as any)?.data?.hideoutStations;
+      return normalizeGraphQLList(stationsField);
+    },
+    CACHE_TTL,
+    (data) => Array.isArray(data) && data.length > 0,
+  );
 }
 
 const MAPS_REF_QUERY = `
@@ -518,8 +544,14 @@ const MAPS_REF_QUERY = `
 `;
 
 export async function getMapsRef(): Promise<any[]> {
-  return getCachedOrFetch('maps.json', async () => {
-    const result = await fetchGraphQL(MAPS_REF_QUERY);
-    return (result as any)?.data?.maps || [];
-  });
+  return getCachedOrFetch(
+    'maps.json',
+    async () => {
+      const result = await fetchGraphQL(MAPS_REF_QUERY);
+      const mapsField = (result as any)?.data?.maps;
+      return normalizeGraphQLList(mapsField);
+    },
+    CACHE_TTL,
+    (data) => Array.isArray(data) && data.length > 0,
+  );
 }
