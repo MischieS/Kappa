@@ -1,4 +1,5 @@
 import Database from 'better-sqlite3';
+import fs from 'fs';
 import path from 'path';
 import { randomUUID } from 'crypto';
 
@@ -73,7 +74,12 @@ export interface User {
 }
 
 // Initialize Database
-const dbPath = path.join(process.cwd(), 'tarkov-tracker.db');
+const dbPath = process.env.SQLITE_DB_PATH
+  ? path.resolve(process.env.SQLITE_DB_PATH)
+  : path.join(process.cwd(), 'data', 'tarkov-tracker.db');
+
+fs.mkdirSync(path.dirname(dbPath), { recursive: true });
+
 const db = new Database(dbPath);
 db.pragma('journal_mode = WAL');
 

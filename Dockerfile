@@ -14,8 +14,10 @@ FROM node:20-alpine AS runner
 WORKDIR /app
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
+ENV SQLITE_DB_PATH=/app/data/tarkov-tracker.db
 
 RUN addgroup -S nextjs && adduser -S nextjs -G nextjs
+RUN mkdir -p /app/data && chown -R nextjs:nextjs /app/data
 USER nextjs
 
 COPY --from=builder /app/package*.json ./
