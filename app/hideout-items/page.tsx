@@ -4,6 +4,7 @@ import { cookies } from "next/headers";
 import { getUserById } from "@/lib/repository/userRepository";
 
 export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
 
 interface TraderStandingSummary {
   traderId: string;

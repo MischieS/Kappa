@@ -2,8 +2,8 @@
 const nextConfig = {
   // React Compiler disabled for now; re-enable once babel-plugin-react-compiler is installed and configured.
   reactCompiler: false,
+  serverExternalPackages: ['better-sqlite3'],
   experimental: {
-    serverComponentsExternalPackages: ['better-sqlite3'],
   },
 };
 

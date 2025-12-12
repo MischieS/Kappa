@@ -19,6 +19,7 @@ export interface GameMap {
   height: number;
   players: string;
   duration: string;
+  difficulty?: string;
   locations: MapLocation[];
 }
 

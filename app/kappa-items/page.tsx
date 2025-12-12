@@ -9,6 +9,7 @@ type InitialUserProgress = {
 } | null;
 
 export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
 
 async function getInitialUserProgress(): Promise<InitialUserProgress> {
   const cookieStore = await cookies();

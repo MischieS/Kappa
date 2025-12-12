@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { AppShell } from "@/components/layout/AppShell";
 import { Badge, type BadgeVariant } from "@/components/ui/Badge";
@@ -265,7 +265,7 @@ function applyQuestLocking(
   });
 }
 
-export default function QuestsPage() {
+function QuestsContent() {
   const searchParams = useSearchParams();
   const [query, setQuery] = useState("");
   const [status, setStatus] = useState<(typeof STATUS_FILTERS)[number]["id"]>("available");
@@ -1879,5 +1879,13 @@ export default function QuestsPage() {
         </div>
       </section>
     </AppShell>
+  );
+}
+
+export default function QuestsPage() {
+  return (
+    <Suspense fallback={<div>Loading quests...</div>}>
+      <QuestsContent />
+    </Suspense>
   );
 }

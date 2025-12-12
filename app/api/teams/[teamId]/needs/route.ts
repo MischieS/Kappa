@@ -53,14 +53,14 @@ interface MemberTotals {
 
 export async function GET(
   _request: NextRequest,
-  { params }: { params: { teamId?: string } },
+  context: { params: Promise<{ teamId: string }> },
 ) {
+  const { teamId } = await context.params;
   const user = await getCurrentUser();
   if (!user) {
     return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   }
 
-  const teamId = (params.teamId ?? "").toString();
   if (!teamId) {
     return NextResponse.json({ error: "teamId is required" }, { status: 400 });
   }
