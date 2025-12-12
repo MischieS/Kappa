@@ -198,29 +198,6 @@ export default function DashboardClient({ initialTasks, initialTraderStandings }
           mappedQuests.push(quest);
         }
 
-        const processItemForList = (itemId: string, name: string, isKappa: boolean, requiredCount: number) => {
-          const existing = kappaReqs.get(itemId) ?? 0;
-          const owned = ownedByItemId.get(itemId) ?? 0;
-
-          if (existing) {
-            kappaReqs.set(itemId, existing + requiredCount);
-          } else {
-            kappaReqs.set(itemId, requiredCount);
-          }
-
-          const aggregatedItemsMap = new Map<string, Item>();
-          aggregatedItemsMap.set(itemId, {
-            id: itemId,
-            name: name,
-            category: isKappa ? "Kappa" : "Quest",
-            rarity: isKappa ? "legendary" : "common",
-            neededForKappa: isKappa,
-            quantityRequired: requiredCount,
-            quantityOwned: owned,
-            foundInRaid: true,
-          });
-        };
-
         for (const task of tasks) {
           if (!task.id) continue;
 
@@ -252,8 +229,6 @@ export default function DashboardClient({ initialTasks, initialTraderStandings }
                   const current = questReqs.get(itemDef.id) ?? 0;
                   questReqs.set(itemDef.id, current + count);
                 }
-
-                processItemForList(itemDef.id, itemDef.name, isCollector, count);
               }
             }
           }
