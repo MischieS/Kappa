@@ -222,10 +222,6 @@ export default function DashboardClient({ initialTasks, initialTraderStandings }
                 if (!itemDef.id) continue;
                 const count = obj.count || 1;
 
-                // Only track FIR item requirements to avoid counting large non-FIR turn-ins
-                // (e.g. ammo/currency objectives) which would explode totals.
-                if (obj.foundInRaid !== true) continue;
-
                 // Safety clamp: ignore obviously bad counts.
                 if (typeof count !== "number" || !Number.isFinite(count) || count <= 0 || count > 100) continue;
 
