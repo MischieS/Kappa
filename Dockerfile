@@ -18,12 +18,14 @@ ENV SQLITE_DB_PATH=/app/data/tarkov-tracker.db
 
 RUN addgroup -S nextjs && adduser -S nextjs -G nextjs
 RUN mkdir -p /app/data && chown -R nextjs:nextjs /app/data
-USER nextjs
+COPY --from=builder --chown=nextjs:nextjs /app/package*.json ./
+COPY --from=builder --chown=nextjs:nextjs /app/public ./public
+COPY --from=builder --chown=nextjs:nextjs /app/.next ./.next
+COPY --from=builder --chown=nextjs:nextjs /app/node_modules ./node_modules
 
-COPY --from=builder /app/package*.json ./
-COPY --from=builder /app/public ./public
-COPY --from=builder /app/.next ./.next
-COPY --from=builder /app/node_modules ./node_modules
+RUN mkdir -p /app/.next/cache && chown -R nextjs:nextjs /app/.next
+
+USER nextjs
 
 EXPOSE 3000
 CMD ["npm","run","start"]
