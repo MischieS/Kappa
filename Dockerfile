@@ -15,9 +15,10 @@ WORKDIR /app
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV SQLITE_DB_PATH=/app/data/tarkov-tracker.db
+ENV REF_CACHE_DIR=/app/data/ref-cache
 
 RUN addgroup -S nextjs && adduser -S nextjs -G nextjs
-RUN mkdir -p /app/data && chown -R nextjs:nextjs /app/data
+RUN mkdir -p /app/data /app/data/ref-cache && chown -R nextjs:nextjs /app/data
 COPY --from=builder --chown=nextjs:nextjs /app/package*.json ./
 COPY --from=builder --chown=nextjs:nextjs /app/public ./public
 COPY --from=builder --chown=nextjs:nextjs /app/.next ./.next

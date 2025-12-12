@@ -7,4 +7,10 @@ services:
       - NODE_ENV=production
     ports:
       - "127.0.0.1:3000:3000"
+    volumes:
+      - kappa_data:/app/data
+
+volumes:
+  kappa_data:
+    
       

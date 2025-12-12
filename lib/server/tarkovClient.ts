@@ -2,7 +2,9 @@ import fs from 'fs/promises';
 import path from 'path';
 
 const TARKOV_GRAPHQL_ENDPOINT = 'https://api.tarkov.dev/graphql';
-const REF_CACHE_DIR = path.join(process.cwd(), 'lib', 'ref-cache');
+const REF_CACHE_DIR = process.env.REF_CACHE_DIR
+  ? path.resolve(process.env.REF_CACHE_DIR)
+  : path.join(process.cwd(), 'lib', 'ref-cache');
 
 async function ensureCacheDir() {
   await fs.mkdir(REF_CACHE_DIR, { recursive: true }).catch(() => undefined);
