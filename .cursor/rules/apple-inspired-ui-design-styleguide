@@ -1,0 +1,467 @@
+# Apple Liquid Glass Design System (2025)
+
+You are implementing Apple's latest "Liquid Glass" design system - a translucent, dynamic material that unifies Apple's cross-platform design language. Follow these rules exactly. Prioritize clarity, content-first approach, and elegant vitality.
+
+---
+
+## Core Philosophy (2025)
+
+### Liquid Glass Material
+A translucent material that reflects and refracts its surroundings, dynamically transforming to bring greater focus to content. The material floats above content, creating depth and hierarchy while remaining instantly familiar.
+
+### Design Principles
+- **Deference**: UI defers to content; Liquid Glass separates interactive elements without distraction
+- **Clarity**: Clean, purposeful design where every element serves a function
+- **Depth**: Visual layers convey hierarchy through translucent materials and elevation
+- **Vitality**: Dynamic, expressive interfaces that feel alive and responsive
+- **Harmony**: Concentric design fits perfectly with rounded corners of modern hardware
+
+### Spacing (4px precision)
+```
+2px | 4px | 6px | 8px | 12px | 16px | 20px | 24px | 28px | 32px | 40px | 44px | 48px | 64px | 80px
+```
+
+---
+
+## Color System (2025)
+
+### Primary Colors
+```
+System Blue: #007AFF | Hover: #0069D9 | Active: #0056B3
+System Green: #34C759 | Orange: #FF9500 | Red: #FF3B30 
+Yellow: #FFCC00 | Purple: #AF52DE | Pink: #FF2D55 | Teal: #5AC8FA | Indigo: #5856D6
+```
+
+### Neutrals & Glass Effects
+```
+Pure White: #FFFFFF | Glass White: rgba(255, 255, 255, 0.7-0.95)
+Gray 50: #FAFAFA | Gray 100: #F5F5F7 | Gray 200: #E8E8ED | Gray 300: #D1D1D6
+Gray 400: #C7C7CC | Gray 500: #AEAEB2 | Gray 600: #8E8E93 | Gray 700: #636366
+Gray 800: #48484A | Gray 900: #1C1C1E | Pure Black: #000000
+
+Glass Black: rgba(0, 0, 0, 0.3-0.6) for overlays
+```
+
+### Text Hierarchy
+```
+Primary: #1D1D1F (near black, softer than pure black)
+Secondary: #6E6E73 (medium gray)
+Tertiary: #86868B (light gray)
+```
+
+### Separators
+```
+Light: rgba(0, 0, 0, 0.08) | Medium: rgba(0, 0, 0, 0.12) | Opaque: #D2D2D7
+```
+
+---
+
+## Liquid Glass Components
+
+### 1. Buttons (Liquid Glass)
+
+#### Primary (Filled)
+```css
+Height: 44px (iOS), 40px (web), 36px (compact)
+Padding: 0 24px (standard), 0 32px (prominent)
+Background: #007AFF with subtle gradient overlay
+Border: none
+Border-radius: 980px (fully rounded capsule)
+Font: -apple-system 17px/600 (iOS), 15px/600 (web)
+Color: #FFFFFF
+Letter-spacing: -0.41px (17px), -0.23px (15px)
+Box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05)
+Backdrop-filter: blur(10px) (when over content)
+Transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1)
+
+States:
+- Hover: transform scale(1.02), shadow 0 2px 8px rgba(0, 122, 255, 0.3)
+- Active: scale(0.98), brightness(0.9)
+- Disabled: background #D1D1D6, color #86868B
+```
+
+#### Secondary (Tinted Glass)
+```css
+Background: rgba(0, 122, 255, 0.1)
+Backdrop-filter: blur(20px) saturate(180%)
+Color: #007AFF
+Border: 0.5px solid rgba(0, 122, 255, 0.2)
+
+Hover: background rgba(0, 122, 255, 0.15)
+Active: background rgba(0, 122, 255, 0.2)
+```
+
+#### Tertiary (Ghost Glass)
+```css
+Background: transparent
+Backdrop-filter: blur(10px)
+Color: #007AFF
+Border: none
+
+Hover: background rgba(0, 122, 255, 0.08)
+Active: background rgba(0, 122, 255, 0.12)
+```
+
+### 2. Input Fields (Glass)
+
+#### Text Input
+```css
+Height: 44px (touch), 40px (desktop), 36px (compact)
+Padding: 11px 16px
+Background: rgba(255, 255, 255, 0.8)
+Backdrop-filter: blur(20px) saturate(180%)
+Border: 0.5px solid rgba(0, 0, 0, 0.1)
+Border-radius: 12px (iOS), 10px (macOS)
+Font: -apple-system 17px/400
+Color: #1D1D1F
+Caret-color: #007AFF
+Box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04)
+Transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1)
+
+Focus:
+- Border: 1px solid #007AFF
+- Box-shadow: 0 0 0 4px rgba(0, 122, 255, 0.12)
+- Background: rgba(255, 255, 255, 0.95)
+
+Error:
+- Border: 1px solid #FF3B30
+- Box-shadow: 0 0 0 4px rgba(255, 59, 48, 0.12)
+
+Disabled:
+- Background: rgba(245, 245, 247, 0.6)
+- Color: #86868B
+- Cursor: not-allowed
+```
+
+#### Label
+```css
+Font: 13px/600 (iOS), 12px/600 (macOS)
+Color: #1D1D1F
+Letter-spacing: -0.08px
+Margin-bottom: 8px
+Required asterisk: #FF3B30, 13px
+```
+
+#### Helper/Error Text
+```css
+Font: 13px/400
+Color: #6E6E73 (default), #FF3B30 (error)
+Letter-spacing: -0.08px
+Margin-top: 6px
+Line-height: 1.4
+```
+
+### 3. Modals & Sheets (Liquid Glass)
+
+#### Backdrop
+```css
+Position: fixed, inset 0
+Background: rgba(0, 0, 0, 0.4-0.6)
+Backdrop-filter: blur(40px) saturate(150%)
+Z-index: 9999
+Animation: backdropFadeIn 0.35s cubic-bezier(0.4, 0, 0.2, 1)
+```
+
+#### Sheet Container
+```css
+Max-width: 540px (standard), 680px (large), 920px (extra large)
+Background: rgba(255, 255, 255, 0.95)
+Backdrop-filter: blur(40px) saturate(180%)
+Border: 0.5px solid rgba(0, 0, 0, 0.04)
+Border-radius: 24px (top-level), 20px (nested)
+Padding: 32px 28px 28px 28px
+Box-shadow: 
+  0 32px 64px -12px rgba(0, 0, 0, 0.14),
+  0 0 1px rgba(0, 0, 0, 0.06)
+Transform-origin: center center
+Animation: sheetSlideUp 0.45s cubic-bezier(0.32, 0.72, 0, 1)
+```
+
+#### Close Button
+```css
+Position: absolute, top 20px, right 20px
+Width: 32px, Height: 32px
+Background: rgba(120, 120, 128, 0.16)
+Backdrop-filter: blur(10px)
+Border-radius: 50%
+Border: 0.5px solid rgba(0, 0, 0, 0.04)
+Transition: all 0.2s ease
+
+Hover: background rgba(120, 120, 128, 0.24), transform scale(1.08)
+Active: background rgba(120, 120, 128, 0.32), transform scale(0.96)
+```
+
+#### Modal Title
+```css
+Font: 28px/700 (hero), 22px/700 (standard)
+Color: #1D1D1F
+Letter-spacing: 0.36px (28px), -0.26px (22px)
+Line-height: 1.15
+Margin-bottom: 8px
+```
+
+#### Modal Body
+```css
+Font: 17px/400
+Color: #6E6E73
+Letter-spacing: -0.41px
+Line-height: 1.5
+Margin-bottom: 28px
+```
+
+### 4. Cards (Elevated Glass)
+
+#### Standard Card
+```css
+Background: rgba(255, 255, 255, 0.9)
+Backdrop-filter: blur(30px) saturate(180%)
+Border: 0.5px solid rgba(0, 0, 0, 0.06)
+Border-radius: 18px
+Padding: 24px
+Box-shadow: 
+  0 2px 8px rgba(0, 0, 0, 0.04),
+  0 1px 2px rgba(0, 0, 0, 0.02)
+Transition: all 0.4s cubic-bezier(0.32, 0.72, 0, 1)
+
+Hover (interactive):
+- Transform: translateY(-4px) scale(1.01)
+- Box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.06)
+- Border: 0.5px solid rgba(0, 0, 0, 0.08)
+- Background: rgba(255, 255, 255, 0.95)
+```
+
+#### Card Title
+```css
+Font: 22px/700
+Color: #1D1D1F
+Letter-spacing: -0.26px
+Line-height: 1.2
+Margin-bottom: 6px
+```
+
+#### Card Body
+```css
+Font: 17px/400
+Color: #6E6E73
+Letter-spacing: -0.41px
+Line-height: 1.47
+```
+
+### 5. Navigation (Glass Bar)
+
+#### Nav Bar (Persistent)
+```css
+Height: 52px (iOS), 48px (macOS/web)
+Background: rgba(255, 255, 255, 0.72)
+Backdrop-filter: blur(20px) saturate(180%)
+Border-bottom: 0.5px solid rgba(0, 0, 0, 0.08)
+Padding: 0 max(env(safe-area-inset-left), 20px)
+Position: sticky, top 0
+Z-index: 1000
+Box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03)
+```
+
+#### Nav Links
+```css
+Font: 17px/400 (iOS), 15px/400 (web)
+Color: #1D1D1F
+Padding: 8px 14px
+Border-radius: 10px
+Letter-spacing: -0.41px (17px), -0.23px (15px)
+Transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1)
+
+Hover:
+- Background: rgba(0, 122, 255, 0.08)
+- Backdrop-filter: blur(10px)
+- Color: #007AFF
+
+Active:
+- Background: rgba(0, 122, 255, 0.14)
+- Color: #007AFF
+- Font-weight: 600
+```
+
+### 6. Alerts & Notifications (Glass)
+
+#### Alert Box
+```css
+Padding: 20px
+Background: rgba(255, 255, 255, 0.92)
+Backdrop-filter: blur(30px) saturate(180%)
+Border-radius: 16px
+Border: 0.5px solid rgba(0, 0, 0, 0.08)
+Box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08)
+Font: 17px/400
+Letter-spacing: -0.41px
+Line-height: 1.47
+
+Variants (with colored accent bar on left):
+- Success: border-left 4px solid #34C759, tint rgba(52, 199, 89, 0.08)
+- Warning: border-left 4px solid #FF9500, tint rgba(255, 149, 0, 0.08)
+- Error: border-left 4px solid #FF3B30, tint rgba(255, 59, 48, 0.08)
+- Info: border-left 4px solid #007AFF, tint rgba(0, 122, 255, 0.08)
+```
+
+#### Toast/Banner (Top)
+```css
+Position: fixed, top 20px, left 50%, transform translateX(-50%)
+Min-width: 320px, Max-width: 440px
+Background: rgba(255, 255, 255, 0.88)
+Backdrop-filter: blur(40px) saturate(180%)
+Border-radius: 16px
+Border: 0.5px solid rgba(0, 0, 0, 0.06)
+Padding: 16px 20px
+Box-shadow: 
+  0 16px 48px rgba(0, 0, 0, 0.18),
+  0 0 1px rgba(0, 0, 0, 0.08)
+Z-index: 10000
+Animation: toastSlideDown 0.4s cubic-bezier(0.32, 0.72, 0, 1)
+```
+
+### 7. Tables (List Style)
+
+#### Container
+```css
+Background: rgba(255, 255, 255, 0.92)
+Backdrop-filter: blur(30px) saturate(180%)
+Border: 0.5px solid rgba(0, 0, 0, 0.08)
+Border-radius: 14px
+Overflow: hidden
+Box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04)
+```
+
+#### Header
+```css
+Background: rgba(250, 250, 250, 0.8)
+Backdrop-filter: blur(20px)
+Font: 12px/600
+Color: #6E6E73
+Text-transform: uppercase
+Letter-spacing: 0.08em
+Padding: 12px 20px
+Border-bottom: 0.5px solid rgba(0, 0, 0, 0.08)
+```
+
+#### Row
+```css
+Border-bottom: 0.5px solid rgba(0, 0, 0, 0.06)
+Transition: background 0.2s ease
+Last-child: border-bottom none
+
+Hover:
+- Background: rgba(0, 122, 255, 0.04)
+- Backdrop-filter: blur(10px)
+```
+
+#### Cell
+```css
+Padding: 16px 20px
+Font: 17px/400
+Color: #1D1D1F
+Letter-spacing: -0.41px
+Vertical-align: middle
+```
+
+### 8. Form Elements (Glass)
+
+#### Checkbox/Radio
+```css
+Size: 22px (touch), 20px (desktop)
+Border: 2px solid #D1D1D6
+Border-radius: 7px (checkbox), 50% (radio)
+Background: rgba(255, 255, 255, 0.8)
+Backdrop-filter: blur(10px)
+Transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1)
+
+Checked:
+- Background: #007AFF
+- Border-color: #007AFF
+- Checkmark: white, bold
+
+Label:
+- Font: 17px/400
+- Color: #1D1D1F
+- Letter-spacing: -0.41px
+- Margin-left: 12px
+```
+
+#### Select/Dropdown
+```css
+(Same as input with additions)
+Padding-right: 44px
+Background-image: chevron.down (SF Symbol style)
+Background-position: right 16px center
+Appearance: none
+
+Menu:
+- Background: rgba(255, 255, 255, 0.94)
+- Backdrop-filter: blur(40px) saturate(180%)
+- Border-radius: 14px
+- Border: 0.5px solid rgba(0, 0, 0, 0.08)
+- Padding: 8px
+- Box-shadow: 0 16px 48px rgba(0, 0, 0, 0.14)
+
+Option:
+- Padding: 12px 16px
+- Border-radius: 10px
+- Font: 17px/400
+- Transition: background 0.15s ease
+- Hover: background rgba(0, 122, 255, 0.08)
+```
+
+#### Toggle/Switch
+```css
+Width: 51px, Height: 31px
+Background: rgba(120, 120, 128, 0.16) (off)
+Background: #34C759 (on)
+Border-radius: 31px
+Padding: 2px
+Transition: background 0.3s cubic-bezier(0.4, 0, 0.2, 1)
+
+Thumb:
+- Size: 27px
+- Background: #FFFFFF
+- Box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15)
+- Transform: translateX(0) (off), translateX(20px) (on)
+```
+
+---
+
+## Typography (SF Pro 2025)
+
+### Font Family
+```
+Primary: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", sans-serif
+Mono: "SF Mono", ui-monospace, Menlo, Monaco, "Cascadia Code", monospace
+```
+
+### Scale & Tracking
+```
+11px (0.07px): Caption 2
+12px (0.00px): Caption 1
+13px (-0.08px): Footnote
+15px (-0.23px): Subheadline
+17px (-0.41px): Body (iOS standard)
+19px (-0.45px): Callout
+20px (-0.45px): Title 3
+22px (-0.26px): Title 2
+28px (0.36px): Title 1
+34px (0.37px): Large Title
+48px (0.00px): Display
+64px (0.00px): Hero
+```
+
+### Weights
+```
+Light: 300 | Regular: 400 | Medium: 500 | Semibold: 600 | Bold: 700 | Heavy: 800
+```
+
+### Line Height
+```
+Tight: 1.1-1.2 (large headings)
+Normal: 1.4 (UI text)
+Comfortable: 1.47 (body paragraphs - Apple's precise ratio)
+Relaxed: 1.6 (long-form content)
+```
+
+---

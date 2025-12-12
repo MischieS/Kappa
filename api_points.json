@@ -1,0 +1,5067 @@
+{
+  "data": {
+    "__schema": {
+      "types": [
+        {
+          "name": "Achievement",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "name"
+            },
+            {
+              "name": "description"
+            },
+            {
+              "name": "hidden"
+            },
+            {
+              "name": "playersCompletedPercent"
+            },
+            {
+              "name": "adjustedPlayersCompletedPercent"
+            },
+            {
+              "name": "side"
+            },
+            {
+              "name": "normalizedSide"
+            },
+            {
+              "name": "rarity"
+            },
+            {
+              "name": "normalizedRarity"
+            },
+            {
+              "name": "imageLink"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "ID",
+          "kind": "SCALAR",
+          "fields": null,
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "String",
+          "kind": "SCALAR",
+          "fields": null,
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "Boolean",
+          "kind": "SCALAR",
+          "fields": null,
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "Float",
+          "kind": "SCALAR",
+          "fields": null,
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "Ammo",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "item"
+            },
+            {
+              "name": "weight"
+            },
+            {
+              "name": "caliber"
+            },
+            {
+              "name": "stackMaxSize"
+            },
+            {
+              "name": "tracer"
+            },
+            {
+              "name": "tracerColor"
+            },
+            {
+              "name": "ammoType"
+            },
+            {
+              "name": "projectileCount"
+            },
+            {
+              "name": "damage"
+            },
+            {
+              "name": "armorDamage"
+            },
+            {
+              "name": "fragmentationChance"
+            },
+            {
+              "name": "ricochetChance"
+            },
+            {
+              "name": "penetrationChance"
+            },
+            {
+              "name": "penetrationPower"
+            },
+            {
+              "name": "penetrationPowerDeviation"
+            },
+            {
+              "name": "accuracyModifier"
+            },
+            {
+              "name": "recoilModifier"
+            },
+            {
+              "name": "initialSpeed"
+            },
+            {
+              "name": "lightBleedModifier"
+            },
+            {
+              "name": "heavyBleedModifier"
+            },
+            {
+              "name": "staminaBurnPerDamage"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "Int",
+          "kind": "SCALAR",
+          "fields": null,
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "ArmorMaterial",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "name"
+            },
+            {
+              "name": "destructibility"
+            },
+            {
+              "name": "minRepairDegradation"
+            },
+            {
+              "name": "maxRepairDegradation"
+            },
+            {
+              "name": "explosionDestructibility"
+            },
+            {
+              "name": "minRepairKitDegradation"
+            },
+            {
+              "name": "maxRepairKitDegradation"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "AttributeThreshold",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "name"
+            },
+            {
+              "name": "requirement"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "Barter",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "trader"
+            },
+            {
+              "name": "level"
+            },
+            {
+              "name": "taskUnlock"
+            },
+            {
+              "name": "requiredItems"
+            },
+            {
+              "name": "rewardItems"
+            },
+            {
+              "name": "buyLimit"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "BossSpawn",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "boss"
+            },
+            {
+              "name": "spawnChance"
+            },
+            {
+              "name": "spawnLocations"
+            },
+            {
+              "name": "escorts"
+            },
+            {
+              "name": "spawnTime"
+            },
+            {
+              "name": "spawnTimeRandom"
+            },
+            {
+              "name": "spawnTrigger"
+            },
+            {
+              "name": "switch"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "BossEscort",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "boss"
+            },
+            {
+              "name": "amount"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "BossEscortAmount",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "count"
+            },
+            {
+              "name": "chance"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "BossSpawnLocation",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "spawnKey"
+            },
+            {
+              "name": "name"
+            },
+            {
+              "name": "chance"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "ContainedItem",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "item"
+            },
+            {
+              "name": "count"
+            },
+            {
+              "name": "quantity"
+            },
+            {
+              "name": "attributes"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "Craft",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "station"
+            },
+            {
+              "name": "level"
+            },
+            {
+              "name": "taskUnlock"
+            },
+            {
+              "name": "duration"
+            },
+            {
+              "name": "requiredItems"
+            },
+            {
+              "name": "requiredQuestItems"
+            },
+            {
+              "name": "rewardItems"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "CustomizationItem",
+          "kind": "INTERFACE",
+          "fields": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "name"
+            },
+            {
+              "name": "customizationType"
+            },
+            {
+              "name": "customizationTypeName"
+            },
+            {
+              "name": "imageLink"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "CustomizationItemBasic",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "name"
+            },
+            {
+              "name": "customizationType"
+            },
+            {
+              "name": "customizationTypeName"
+            },
+            {
+              "name": "imageLink"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "CustomizationItems",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "name"
+            },
+            {
+              "name": "customizationType"
+            },
+            {
+              "name": "customizationTypeName"
+            },
+            {
+              "name": "imageLink"
+            },
+            {
+              "name": "items"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "GameProperty",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "key"
+            },
+            {
+              "name": "numericValue"
+            },
+            {
+              "name": "stringValue"
+            },
+            {
+              "name": "arrayValue"
+            },
+            {
+              "name": "objectValue"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "FleaMarket",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "name"
+            },
+            {
+              "name": "normalizedName"
+            },
+            {
+              "name": "minPlayerLevel"
+            },
+            {
+              "name": "enabled"
+            },
+            {
+              "name": "sellOfferFeeRate"
+            },
+            {
+              "name": "sellRequirementFeeRate"
+            },
+            {
+              "name": "foundInRaidRequired"
+            },
+            {
+              "name": "reputationLevels"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "FleaMarketReputationLevel",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "offers"
+            },
+            {
+              "name": "offersSpecialEditions"
+            },
+            {
+              "name": "minRep"
+            },
+            {
+              "name": "maxRep"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "GameMode",
+          "kind": "ENUM",
+          "fields": null,
+          "enumValues": [
+            {
+              "name": "regular"
+            },
+            {
+              "name": "pve"
+            }
+          ],
+          "inputFields": null
+        },
+        {
+          "name": "GoonReport",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "map"
+            },
+            {
+              "name": "timestamp"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "HealthEffect",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "bodyParts"
+            },
+            {
+              "name": "effects"
+            },
+            {
+              "name": "time"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "HealthPart",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "max"
+            },
+            {
+              "name": "bodyPart"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "HideoutStation",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "name"
+            },
+            {
+              "name": "normalizedName"
+            },
+            {
+              "name": "imageLink"
+            },
+            {
+              "name": "levels"
+            },
+            {
+              "name": "tarkovDataId"
+            },
+            {
+              "name": "crafts"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "HideoutStationBonus",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "type"
+            },
+            {
+              "name": "name"
+            },
+            {
+              "name": "value"
+            },
+            {
+              "name": "passive"
+            },
+            {
+              "name": "production"
+            },
+            {
+              "name": "slotItems"
+            },
+            {
+              "name": "skillName"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "HideoutStationLevel",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "level"
+            },
+            {
+              "name": "constructionTime"
+            },
+            {
+              "name": "description"
+            },
+            {
+              "name": "itemRequirements"
+            },
+            {
+              "name": "stationLevelRequirements"
+            },
+            {
+              "name": "skillRequirements"
+            },
+            {
+              "name": "traderRequirements"
+            },
+            {
+              "name": "tarkovDataId"
+            },
+            {
+              "name": "crafts"
+            },
+            {
+              "name": "bonuses"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "historicalPricePoint",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "price"
+            },
+            {
+              "name": "priceMin"
+            },
+            {
+              "name": "offerCount"
+            },
+            {
+              "name": "offerCountMin"
+            },
+            {
+              "name": "timestamp"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "Item",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "name"
+            },
+            {
+              "name": "normalizedName"
+            },
+            {
+              "name": "shortName"
+            },
+            {
+              "name": "description"
+            },
+            {
+              "name": "basePrice"
+            },
+            {
+              "name": "updated"
+            },
+            {
+              "name": "width"
+            },
+            {
+              "name": "height"
+            },
+            {
+              "name": "backgroundColor"
+            },
+            {
+              "name": "iconLink"
+            },
+            {
+              "name": "gridImageLink"
+            },
+            {
+              "name": "baseImageLink"
+            },
+            {
+              "name": "inspectImageLink"
+            },
+            {
+              "name": "image512pxLink"
+            },
+            {
+              "name": "image8xLink"
+            },
+            {
+              "name": "wikiLink"
+            },
+            {
+              "name": "types"
+            },
+            {
+              "name": "avg24hPrice"
+            },
+            {
+              "name": "properties"
+            },
+            {
+              "name": "conflictingItems"
+            },
+            {
+              "name": "conflictingSlotIds"
+            },
+            {
+              "name": "accuracyModifier"
+            },
+            {
+              "name": "recoilModifier"
+            },
+            {
+              "name": "ergonomicsModifier"
+            },
+            {
+              "name": "hasGrid"
+            },
+            {
+              "name": "blocksHeadphones"
+            },
+            {
+              "name": "link"
+            },
+            {
+              "name": "lastLowPrice"
+            },
+            {
+              "name": "changeLast48h"
+            },
+            {
+              "name": "changeLast48hPercent"
+            },
+            {
+              "name": "low24hPrice"
+            },
+            {
+              "name": "high24hPrice"
+            },
+            {
+              "name": "lastOfferCount"
+            },
+            {
+              "name": "sellFor"
+            },
+            {
+              "name": "buyFor"
+            },
+            {
+              "name": "containsItems"
+            },
+            {
+              "name": "category"
+            },
+            {
+              "name": "categories"
+            },
+            {
+              "name": "bsgCategoryId"
+            },
+            {
+              "name": "handbookCategories"
+            },
+            {
+              "name": "weight"
+            },
+            {
+              "name": "velocity"
+            },
+            {
+              "name": "loudness"
+            },
+            {
+              "name": "usedInTasks"
+            },
+            {
+              "name": "receivedFromTasks"
+            },
+            {
+              "name": "bartersFor"
+            },
+            {
+              "name": "bartersUsing"
+            },
+            {
+              "name": "craftsFor"
+            },
+            {
+              "name": "craftsUsing"
+            },
+            {
+              "name": "historicalPrices"
+            },
+            {
+              "name": "fleaMarketFee"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "ItemArmorSlot",
+          "kind": "INTERFACE",
+          "fields": [
+            {
+              "name": "nameId"
+            },
+            {
+              "name": "zones"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "ItemArmorSlotLocked",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "nameId"
+            },
+            {
+              "name": "name"
+            },
+            {
+              "name": "bluntThroughput"
+            },
+            {
+              "name": "class"
+            },
+            {
+              "name": "durability"
+            },
+            {
+              "name": "repairCost"
+            },
+            {
+              "name": "speedPenalty"
+            },
+            {
+              "name": "turnPenalty"
+            },
+            {
+              "name": "ergoPenalty"
+            },
+            {
+              "name": "material"
+            },
+            {
+              "name": "zones"
+            },
+            {
+              "name": "armorType"
+            },
+            {
+              "name": "baseValue"
+            },
+            {
+              "name": "ricochetX"
+            },
+            {
+              "name": "ricochetY"
+            },
+            {
+              "name": "ricochetZ"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "ItemArmorSlotOpen",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "nameId"
+            },
+            {
+              "name": "name"
+            },
+            {
+              "name": "zones"
+            },
+            {
+              "name": "allowedPlates"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "ItemAttribute",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "type"
+            },
+            {
+              "name": "name"
+            },
+            {
+              "name": "value"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "ItemCategory",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "name"
+            },
+            {
+              "name": "normalizedName"
+            },
+            {
+              "name": "parent"
+            },
+            {
+              "name": "children"
+            },
+            {
+              "name": "imageLink"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "ItemFilters",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "allowedCategories"
+            },
+            {
+              "name": "allowedItems"
+            },
+            {
+              "name": "excludedCategories"
+            },
+            {
+              "name": "excludedItems"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "ItemPrice",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "vendor"
+            },
+            {
+              "name": "price"
+            },
+            {
+              "name": "currency"
+            },
+            {
+              "name": "currencyItem"
+            },
+            {
+              "name": "priceRUB"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "ItemPropertiesAmmo",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "caliber"
+            },
+            {
+              "name": "stackMaxSize"
+            },
+            {
+              "name": "tracer"
+            },
+            {
+              "name": "tracerColor"
+            },
+            {
+              "name": "ammoType"
+            },
+            {
+              "name": "projectileCount"
+            },
+            {
+              "name": "damage"
+            },
+            {
+              "name": "armorDamage"
+            },
+            {
+              "name": "fragmentationChance"
+            },
+            {
+              "name": "ricochetChance"
+            },
+            {
+              "name": "penetrationChance"
+            },
+            {
+              "name": "penetrationPower"
+            },
+            {
+              "name": "penetrationPowerDeviation"
+            },
+            {
+              "name": "accuracyModifier"
+            },
+            {
+              "name": "recoilModifier"
+            },
+            {
+              "name": "initialSpeed"
+            },
+            {
+              "name": "lightBleedModifier"
+            },
+            {
+              "name": "heavyBleedModifier"
+            },
+            {
+              "name": "durabilityBurnFactor"
+            },
+            {
+              "name": "heatFactor"
+            },
+            {
+              "name": "staminaBurnPerDamage"
+            },
+            {
+              "name": "ballisticCoeficient"
+            },
+            {
+              "name": "bulletDiameterMilimeters"
+            },
+            {
+              "name": "bulletMassGrams"
+            },
+            {
+              "name": "misfireChance"
+            },
+            {
+              "name": "failureToFeedChance"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "ItemPropertiesArmor",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "class"
+            },
+            {
+              "name": "durability"
+            },
+            {
+              "name": "repairCost"
+            },
+            {
+              "name": "speedPenalty"
+            },
+            {
+              "name": "turnPenalty"
+            },
+            {
+              "name": "ergoPenalty"
+            },
+            {
+              "name": "zones"
+            },
+            {
+              "name": "material"
+            },
+            {
+              "name": "armorType"
+            },
+            {
+              "name": "bluntThroughput"
+            },
+            {
+              "name": "armorSlots"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "ItemPropertiesArmorAttachment",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "class"
+            },
+            {
+              "name": "durability"
+            },
+            {
+              "name": "repairCost"
+            },
+            {
+              "name": "speedPenalty"
+            },
+            {
+              "name": "turnPenalty"
+            },
+            {
+              "name": "ergoPenalty"
+            },
+            {
+              "name": "zones"
+            },
+            {
+              "name": "material"
+            },
+            {
+              "name": "armorType"
+            },
+            {
+              "name": "blindnessProtection"
+            },
+            {
+              "name": "bluntThroughput"
+            },
+            {
+              "name": "slots"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "ItemPropertiesBackpack",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "capacity"
+            },
+            {
+              "name": "grids"
+            },
+            {
+              "name": "speedPenalty"
+            },
+            {
+              "name": "turnPenalty"
+            },
+            {
+              "name": "ergoPenalty"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "ItemPropertiesBarrel",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "ergonomics"
+            },
+            {
+              "name": "recoilModifier"
+            },
+            {
+              "name": "centerOfImpact"
+            },
+            {
+              "name": "deviationCurve"
+            },
+            {
+              "name": "deviationMax"
+            },
+            {
+              "name": "slots"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "ItemPropertiesChestRig",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "class"
+            },
+            {
+              "name": "durability"
+            },
+            {
+              "name": "repairCost"
+            },
+            {
+              "name": "speedPenalty"
+            },
+            {
+              "name": "turnPenalty"
+            },
+            {
+              "name": "ergoPenalty"
+            },
+            {
+              "name": "zones"
+            },
+            {
+              "name": "material"
+            },
+            {
+              "name": "capacity"
+            },
+            {
+              "name": "grids"
+            },
+            {
+              "name": "armorType"
+            },
+            {
+              "name": "bluntThroughput"
+            },
+            {
+              "name": "armorSlots"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "ItemPropertiesContainer",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "capacity"
+            },
+            {
+              "name": "grids"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "ItemPropertiesFoodDrink",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "energy"
+            },
+            {
+              "name": "hydration"
+            },
+            {
+              "name": "units"
+            },
+            {
+              "name": "stimEffects"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "ItemPropertiesGlasses",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "class"
+            },
+            {
+              "name": "durability"
+            },
+            {
+              "name": "repairCost"
+            },
+            {
+              "name": "blindnessProtection"
+            },
+            {
+              "name": "ergoPenalty"
+            },
+            {
+              "name": "material"
+            },
+            {
+              "name": "bluntThroughput"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "ItemPropertiesGrenade",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "type"
+            },
+            {
+              "name": "fuse"
+            },
+            {
+              "name": "minExplosionDistance"
+            },
+            {
+              "name": "maxExplosionDistance"
+            },
+            {
+              "name": "fragments"
+            },
+            {
+              "name": "contusionRadius"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "ItemPropertiesHeadphone",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "ambientVolume"
+            },
+            {
+              "name": "compressorAttack"
+            },
+            {
+              "name": "compressorGain"
+            },
+            {
+              "name": "compressorRelease"
+            },
+            {
+              "name": "compressorThreshold"
+            },
+            {
+              "name": "compressorVolume"
+            },
+            {
+              "name": "cutoffFrequency"
+            },
+            {
+              "name": "distanceModifier"
+            },
+            {
+              "name": "distortion"
+            },
+            {
+              "name": "dryVolume"
+            },
+            {
+              "name": "highFrequencyGain"
+            },
+            {
+              "name": "resonance"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "ItemPropertiesHeadwear",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "slots"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "ItemPropertiesHelmet",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "class"
+            },
+            {
+              "name": "durability"
+            },
+            {
+              "name": "repairCost"
+            },
+            {
+              "name": "speedPenalty"
+            },
+            {
+              "name": "turnPenalty"
+            },
+            {
+              "name": "ergoPenalty"
+            },
+            {
+              "name": "headZones"
+            },
+            {
+              "name": "material"
+            },
+            {
+              "name": "deafening"
+            },
+            {
+              "name": "blocksHeadset"
+            },
+            {
+              "name": "blindnessProtection"
+            },
+            {
+              "name": "slots"
+            },
+            {
+              "name": "ricochetX"
+            },
+            {
+              "name": "ricochetY"
+            },
+            {
+              "name": "ricochetZ"
+            },
+            {
+              "name": "armorType"
+            },
+            {
+              "name": "bluntThroughput"
+            },
+            {
+              "name": "armorSlots"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "ItemPropertiesKey",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "uses"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "ItemPropertiesMagazine",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "ergonomics"
+            },
+            {
+              "name": "recoilModifier"
+            },
+            {
+              "name": "capacity"
+            },
+            {
+              "name": "loadModifier"
+            },
+            {
+              "name": "ammoCheckModifier"
+            },
+            {
+              "name": "malfunctionChance"
+            },
+            {
+              "name": "slots"
+            },
+            {
+              "name": "allowedAmmo"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "ItemPropertiesMedicalItem",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "uses"
+            },
+            {
+              "name": "useTime"
+            },
+            {
+              "name": "cures"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "ItemPropertiesMedKit",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "hitpoints"
+            },
+            {
+              "name": "useTime"
+            },
+            {
+              "name": "maxHealPerUse"
+            },
+            {
+              "name": "cures"
+            },
+            {
+              "name": "hpCostLightBleeding"
+            },
+            {
+              "name": "hpCostHeavyBleeding"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "ItemPropertiesMelee",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "slashDamage"
+            },
+            {
+              "name": "stabDamage"
+            },
+            {
+              "name": "hitRadius"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "ItemPropertiesNightVision",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "intensity"
+            },
+            {
+              "name": "noiseIntensity"
+            },
+            {
+              "name": "noiseScale"
+            },
+            {
+              "name": "diffuseIntensity"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "ItemPropertiesPainkiller",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "uses"
+            },
+            {
+              "name": "useTime"
+            },
+            {
+              "name": "cures"
+            },
+            {
+              "name": "painkillerDuration"
+            },
+            {
+              "name": "energyImpact"
+            },
+            {
+              "name": "hydrationImpact"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "ItemPropertiesPreset",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "baseItem"
+            },
+            {
+              "name": "ergonomics"
+            },
+            {
+              "name": "recoilVertical"
+            },
+            {
+              "name": "recoilHorizontal"
+            },
+            {
+              "name": "moa"
+            },
+            {
+              "name": "default"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "ItemPropertiesResource",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "units"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "ItemPropertiesScope",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "ergonomics"
+            },
+            {
+              "name": "sightModes"
+            },
+            {
+              "name": "sightingRange"
+            },
+            {
+              "name": "recoilModifier"
+            },
+            {
+              "name": "slots"
+            },
+            {
+              "name": "zoomLevels"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "ItemPropertiesStim",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "useTime"
+            },
+            {
+              "name": "cures"
+            },
+            {
+              "name": "stimEffects"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "ItemPropertiesSurgicalKit",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "uses"
+            },
+            {
+              "name": "useTime"
+            },
+            {
+              "name": "cures"
+            },
+            {
+              "name": "minLimbHealth"
+            },
+            {
+              "name": "maxLimbHealth"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "ItemPropertiesWeapon",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "caliber"
+            },
+            {
+              "name": "defaultAmmo"
+            },
+            {
+              "name": "effectiveDistance"
+            },
+            {
+              "name": "ergonomics"
+            },
+            {
+              "name": "fireModes"
+            },
+            {
+              "name": "fireRate"
+            },
+            {
+              "name": "maxDurability"
+            },
+            {
+              "name": "recoilVertical"
+            },
+            {
+              "name": "recoilHorizontal"
+            },
+            {
+              "name": "repairCost"
+            },
+            {
+              "name": "sightingRange"
+            },
+            {
+              "name": "centerOfImpact"
+            },
+            {
+              "name": "deviationCurve"
+            },
+            {
+              "name": "recoilDispersion"
+            },
+            {
+              "name": "recoilAngle"
+            },
+            {
+              "name": "cameraRecoil"
+            },
+            {
+              "name": "cameraSnap"
+            },
+            {
+              "name": "deviationMax"
+            },
+            {
+              "name": "convergence"
+            },
+            {
+              "name": "defaultWidth"
+            },
+            {
+              "name": "defaultHeight"
+            },
+            {
+              "name": "defaultErgonomics"
+            },
+            {
+              "name": "defaultRecoilVertical"
+            },
+            {
+              "name": "defaultRecoilHorizontal"
+            },
+            {
+              "name": "defaultWeight"
+            },
+            {
+              "name": "defaultPreset"
+            },
+            {
+              "name": "presets"
+            },
+            {
+              "name": "slots"
+            },
+            {
+              "name": "allowedAmmo"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "ItemPropertiesWeaponMod",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "ergonomics"
+            },
+            {
+              "name": "recoilModifier"
+            },
+            {
+              "name": "accuracyModifier"
+            },
+            {
+              "name": "slots"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "ItemProperties",
+          "kind": "UNION",
+          "fields": null,
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "ItemSlot",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "name"
+            },
+            {
+              "name": "nameId"
+            },
+            {
+              "name": "filters"
+            },
+            {
+              "name": "required"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "ItemSourceName",
+          "kind": "ENUM",
+          "fields": null,
+          "enumValues": [
+            {
+              "name": "prapor"
+            },
+            {
+              "name": "therapist"
+            },
+            {
+              "name": "fence"
+            },
+            {
+              "name": "skier"
+            },
+            {
+              "name": "peacekeeper"
+            },
+            {
+              "name": "mechanic"
+            },
+            {
+              "name": "ragman"
+            },
+            {
+              "name": "jaeger"
+            },
+            {
+              "name": "ref"
+            },
+            {
+              "name": "fleaMarket"
+            }
+          ],
+          "inputFields": null
+        },
+        {
+          "name": "ItemStorageGrid",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "width"
+            },
+            {
+              "name": "height"
+            },
+            {
+              "name": "filters"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "Lock",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "lockType"
+            },
+            {
+              "name": "key"
+            },
+            {
+              "name": "needsPower"
+            },
+            {
+              "name": "position"
+            },
+            {
+              "name": "outline"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "bottom"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "LootContainer",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "name"
+            },
+            {
+              "name": "normalizedName"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "LootContainerPosition",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "lootContainer"
+            },
+            {
+              "name": "position"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "LootLoosePosition",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "items"
+            },
+            {
+              "name": "position"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "Map",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "tarkovDataId"
+            },
+            {
+              "name": "name"
+            },
+            {
+              "name": "normalizedName"
+            },
+            {
+              "name": "wiki"
+            },
+            {
+              "name": "description"
+            },
+            {
+              "name": "enemies"
+            },
+            {
+              "name": "raidDuration"
+            },
+            {
+              "name": "players"
+            },
+            {
+              "name": "bosses"
+            },
+            {
+              "name": "nameId"
+            },
+            {
+              "name": "accessKeys"
+            },
+            {
+              "name": "accessKeysMinPlayerLevel"
+            },
+            {
+              "name": "minPlayerLevel"
+            },
+            {
+              "name": "maxPlayerLevel"
+            },
+            {
+              "name": "spawns"
+            },
+            {
+              "name": "extracts"
+            },
+            {
+              "name": "transits"
+            },
+            {
+              "name": "locks"
+            },
+            {
+              "name": "switches"
+            },
+            {
+              "name": "hazards"
+            },
+            {
+              "name": "lootContainers"
+            },
+            {
+              "name": "lootLoose"
+            },
+            {
+              "name": "stationaryWeapons"
+            },
+            {
+              "name": "artillery"
+            },
+            {
+              "name": "btrStops"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "MapArtillerySettings",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "zones"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "MapArtilleryZone",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "position"
+            },
+            {
+              "name": "outline"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "bottom"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "MapExtract",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "name"
+            },
+            {
+              "name": "faction"
+            },
+            {
+              "name": "switches"
+            },
+            {
+              "name": "transferItem"
+            },
+            {
+              "name": "position"
+            },
+            {
+              "name": "outline"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "bottom"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "MapHazard",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "hazardType"
+            },
+            {
+              "name": "name"
+            },
+            {
+              "name": "position"
+            },
+            {
+              "name": "outline"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "bottom"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "MapWithPosition",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "map"
+            },
+            {
+              "name": "positions"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "MapPosition",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "x"
+            },
+            {
+              "name": "y"
+            },
+            {
+              "name": "z"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "MapPositionNamed",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "name"
+            },
+            {
+              "name": "x"
+            },
+            {
+              "name": "y"
+            },
+            {
+              "name": "z"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "MapSpawn",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "zoneName"
+            },
+            {
+              "name": "position"
+            },
+            {
+              "name": "sides"
+            },
+            {
+              "name": "categories"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "MapSwitch",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "name"
+            },
+            {
+              "name": "switchType"
+            },
+            {
+              "name": "activatedBy"
+            },
+            {
+              "name": "activates"
+            },
+            {
+              "name": "position"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "MapSwitchOperation",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "operation"
+            },
+            {
+              "name": "target"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "MapSwitchTarget",
+          "kind": "UNION",
+          "fields": null,
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "MapTransit",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "description"
+            },
+            {
+              "name": "conditions"
+            },
+            {
+              "name": "map"
+            },
+            {
+              "name": "position"
+            },
+            {
+              "name": "outline"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "bottom"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "Mastering",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "weapons"
+            },
+            {
+              "name": "level2"
+            },
+            {
+              "name": "level3"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "MobInfo",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "name"
+            },
+            {
+              "name": "normalizedName"
+            },
+            {
+              "name": "health"
+            },
+            {
+              "name": "imagePortraitLink"
+            },
+            {
+              "name": "imagePosterLink"
+            },
+            {
+              "name": "equipment"
+            },
+            {
+              "name": "items"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "NumberCompare",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "compareMethod"
+            },
+            {
+              "name": "value"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "OfferUnlock",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "trader"
+            },
+            {
+              "name": "level"
+            },
+            {
+              "name": "item"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "PlayerLevel",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "level"
+            },
+            {
+              "name": "exp"
+            },
+            {
+              "name": "levelBadgeImageLink"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "Prestige",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "name"
+            },
+            {
+              "name": "prestigeLevel"
+            },
+            {
+              "name": "imageLink"
+            },
+            {
+              "name": "iconLink"
+            },
+            {
+              "name": "conditions"
+            },
+            {
+              "name": "rewards"
+            },
+            {
+              "name": "transferSettings"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "PrestigeTransferSettings",
+          "kind": "UNION",
+          "fields": null,
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "PrestigeTransferSettingsStash",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "gridWidth"
+            },
+            {
+              "name": "gridHeight"
+            },
+            {
+              "name": "itemFilters"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "PrestigeTransferSettingsSkill",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "name"
+            },
+            {
+              "name": "skillType"
+            },
+            {
+              "name": "transferRate"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "PriceRequirement",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "type"
+            },
+            {
+              "name": "value"
+            },
+            {
+              "name": "stringValue"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "QuestItem",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "name"
+            },
+            {
+              "name": "shortName"
+            },
+            {
+              "name": "description"
+            },
+            {
+              "name": "normalizedName"
+            },
+            {
+              "name": "width"
+            },
+            {
+              "name": "height"
+            },
+            {
+              "name": "iconLink"
+            },
+            {
+              "name": "gridImageLink"
+            },
+            {
+              "name": "baseImageLink"
+            },
+            {
+              "name": "inspectImageLink"
+            },
+            {
+              "name": "image512pxLink"
+            },
+            {
+              "name": "image8xLink"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "RequirementHideoutStationLevel",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "station"
+            },
+            {
+              "name": "level"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "RequirementItem",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "item"
+            },
+            {
+              "name": "count"
+            },
+            {
+              "name": "quantity"
+            },
+            {
+              "name": "attributes"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "RequirementSkill",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "name"
+            },
+            {
+              "name": "skill"
+            },
+            {
+              "name": "level"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "RequirementTask",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "task"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "RequirementTrader",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "trader"
+            },
+            {
+              "name": "requirementType"
+            },
+            {
+              "name": "compareMethod"
+            },
+            {
+              "name": "value"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "RequirementType",
+          "kind": "ENUM",
+          "fields": null,
+          "enumValues": [
+            {
+              "name": "playerLevel"
+            },
+            {
+              "name": "loyaltyLevel"
+            },
+            {
+              "name": "questCompleted"
+            },
+            {
+              "name": "stationLevel"
+            }
+          ],
+          "inputFields": null
+        },
+        {
+          "name": "ServerStatus",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "generalStatus"
+            },
+            {
+              "name": "currentStatuses"
+            },
+            {
+              "name": "messages"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "Skill",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "name"
+            },
+            {
+              "name": "imageLink"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "SkillLevel",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "skill"
+            },
+            {
+              "name": "name"
+            },
+            {
+              "name": "level"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "StationaryWeapon",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "name"
+            },
+            {
+              "name": "shortName"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "StationaryWeaponPosition",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "stationaryWeapon"
+            },
+            {
+              "name": "position"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "Status",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "name"
+            },
+            {
+              "name": "message"
+            },
+            {
+              "name": "status"
+            },
+            {
+              "name": "statusCode"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "StatusCode",
+          "kind": "ENUM",
+          "fields": null,
+          "enumValues": [
+            {
+              "name": "OK"
+            },
+            {
+              "name": "Updating"
+            },
+            {
+              "name": "Unstable"
+            },
+            {
+              "name": "Down"
+            }
+          ],
+          "inputFields": null
+        },
+        {
+          "name": "StatusMessage",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "content"
+            },
+            {
+              "name": "time"
+            },
+            {
+              "name": "type"
+            },
+            {
+              "name": "solveTime"
+            },
+            {
+              "name": "statusCode"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "StimEffect",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "type"
+            },
+            {
+              "name": "chance"
+            },
+            {
+              "name": "delay"
+            },
+            {
+              "name": "duration"
+            },
+            {
+              "name": "value"
+            },
+            {
+              "name": "percent"
+            },
+            {
+              "name": "skillName"
+            },
+            {
+              "name": "skill"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "Task",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "tarkovDataId"
+            },
+            {
+              "name": "name"
+            },
+            {
+              "name": "normalizedName"
+            },
+            {
+              "name": "trader"
+            },
+            {
+              "name": "map"
+            },
+            {
+              "name": "experience"
+            },
+            {
+              "name": "wikiLink"
+            },
+            {
+              "name": "taskImageLink"
+            },
+            {
+              "name": "minPlayerLevel"
+            },
+            {
+              "name": "taskRequirements"
+            },
+            {
+              "name": "traderRequirements"
+            },
+            {
+              "name": "availableDelaySecondsMin"
+            },
+            {
+              "name": "availableDelaySecondsMax"
+            },
+            {
+              "name": "objectives"
+            },
+            {
+              "name": "startRewards"
+            },
+            {
+              "name": "finishRewards"
+            },
+            {
+              "name": "failConditions"
+            },
+            {
+              "name": "failureOutcome"
+            },
+            {
+              "name": "restartable"
+            },
+            {
+              "name": "factionName"
+            },
+            {
+              "name": "requiredPrestige"
+            },
+            {
+              "name": "kappaRequired"
+            },
+            {
+              "name": "lightkeeperRequired"
+            },
+            {
+              "name": "descriptionMessageId"
+            },
+            {
+              "name": "startMessageId"
+            },
+            {
+              "name": "successMessageId"
+            },
+            {
+              "name": "failMessageId"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "TaskKey",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "keys"
+            },
+            {
+              "name": "map"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "TaskObjective",
+          "kind": "INTERFACE",
+          "fields": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "type"
+            },
+            {
+              "name": "description"
+            },
+            {
+              "name": "maps"
+            },
+            {
+              "name": "optional"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "TaskObjectiveBasic",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "type"
+            },
+            {
+              "name": "description"
+            },
+            {
+              "name": "maps"
+            },
+            {
+              "name": "optional"
+            },
+            {
+              "name": "zones"
+            },
+            {
+              "name": "requiredKeys"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "TaskObjectiveBuildItem",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "type"
+            },
+            {
+              "name": "description"
+            },
+            {
+              "name": "maps"
+            },
+            {
+              "name": "optional"
+            },
+            {
+              "name": "item"
+            },
+            {
+              "name": "containsAll"
+            },
+            {
+              "name": "containsCategory"
+            },
+            {
+              "name": "attributes"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "TaskObjectiveExperience",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "type"
+            },
+            {
+              "name": "description"
+            },
+            {
+              "name": "count"
+            },
+            {
+              "name": "maps"
+            },
+            {
+              "name": "optional"
+            },
+            {
+              "name": "healthEffect"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "TaskObjectiveExtract",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "type"
+            },
+            {
+              "name": "description"
+            },
+            {
+              "name": "maps"
+            },
+            {
+              "name": "optional"
+            },
+            {
+              "name": "exitStatus"
+            },
+            {
+              "name": "exitName"
+            },
+            {
+              "name": "zoneNames"
+            },
+            {
+              "name": "count"
+            },
+            {
+              "name": "requiredKeys"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "TaskObjectiveHideoutStation",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "type"
+            },
+            {
+              "name": "description"
+            },
+            {
+              "name": "maps"
+            },
+            {
+              "name": "optional"
+            },
+            {
+              "name": "hideoutStation"
+            },
+            {
+              "name": "stationLevel"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "TaskObjectiveItem",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "type"
+            },
+            {
+              "name": "description"
+            },
+            {
+              "name": "maps"
+            },
+            {
+              "name": "optional"
+            },
+            {
+              "name": "items"
+            },
+            {
+              "name": "count"
+            },
+            {
+              "name": "foundInRaid"
+            },
+            {
+              "name": "dogTagLevel"
+            },
+            {
+              "name": "maxDurability"
+            },
+            {
+              "name": "minDurability"
+            },
+            {
+              "name": "zones"
+            },
+            {
+              "name": "requiredKeys"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "TaskObjectiveMark",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "type"
+            },
+            {
+              "name": "description"
+            },
+            {
+              "name": "maps"
+            },
+            {
+              "name": "optional"
+            },
+            {
+              "name": "markerItem"
+            },
+            {
+              "name": "zones"
+            },
+            {
+              "name": "requiredKeys"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "TaskObjectivePlayerLevel",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "type"
+            },
+            {
+              "name": "description"
+            },
+            {
+              "name": "maps"
+            },
+            {
+              "name": "optional"
+            },
+            {
+              "name": "playerLevel"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "TaskObjectiveQuestItem",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "type"
+            },
+            {
+              "name": "description"
+            },
+            {
+              "name": "maps"
+            },
+            {
+              "name": "optional"
+            },
+            {
+              "name": "questItem"
+            },
+            {
+              "name": "count"
+            },
+            {
+              "name": "possibleLocations"
+            },
+            {
+              "name": "zones"
+            },
+            {
+              "name": "requiredKeys"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "TaskObjectiveShoot",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "type"
+            },
+            {
+              "name": "description"
+            },
+            {
+              "name": "maps"
+            },
+            {
+              "name": "optional"
+            },
+            {
+              "name": "targetNames"
+            },
+            {
+              "name": "count"
+            },
+            {
+              "name": "shotType"
+            },
+            {
+              "name": "zoneNames"
+            },
+            {
+              "name": "bodyParts"
+            },
+            {
+              "name": "usingWeapon"
+            },
+            {
+              "name": "usingWeaponMods"
+            },
+            {
+              "name": "wearing"
+            },
+            {
+              "name": "notWearing"
+            },
+            {
+              "name": "distance"
+            },
+            {
+              "name": "playerHealthEffect"
+            },
+            {
+              "name": "enemyHealthEffect"
+            },
+            {
+              "name": "timeFromHour"
+            },
+            {
+              "name": "timeUntilHour"
+            },
+            {
+              "name": "zones"
+            },
+            {
+              "name": "requiredKeys"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "TaskObjectiveSkill",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "type"
+            },
+            {
+              "name": "description"
+            },
+            {
+              "name": "maps"
+            },
+            {
+              "name": "optional"
+            },
+            {
+              "name": "skillLevel"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "TaskObjectiveTaskStatus",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "type"
+            },
+            {
+              "name": "description"
+            },
+            {
+              "name": "maps"
+            },
+            {
+              "name": "optional"
+            },
+            {
+              "name": "task"
+            },
+            {
+              "name": "status"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "TaskObjectiveTraderLevel",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "type"
+            },
+            {
+              "name": "description"
+            },
+            {
+              "name": "maps"
+            },
+            {
+              "name": "optional"
+            },
+            {
+              "name": "trader"
+            },
+            {
+              "name": "level"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "TaskObjectiveTraderStanding",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "type"
+            },
+            {
+              "name": "description"
+            },
+            {
+              "name": "maps"
+            },
+            {
+              "name": "optional"
+            },
+            {
+              "name": "trader"
+            },
+            {
+              "name": "compareMethod"
+            },
+            {
+              "name": "value"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "TaskObjectiveUseItem",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "type"
+            },
+            {
+              "name": "description"
+            },
+            {
+              "name": "maps"
+            },
+            {
+              "name": "optional"
+            },
+            {
+              "name": "useAny"
+            },
+            {
+              "name": "compareMethod"
+            },
+            {
+              "name": "count"
+            },
+            {
+              "name": "zoneNames"
+            },
+            {
+              "name": "zones"
+            },
+            {
+              "name": "requiredKeys"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "TaskRewards",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "traderStanding"
+            },
+            {
+              "name": "items"
+            },
+            {
+              "name": "offerUnlock"
+            },
+            {
+              "name": "skillLevelReward"
+            },
+            {
+              "name": "traderUnlock"
+            },
+            {
+              "name": "craftUnlock"
+            },
+            {
+              "name": "achievement"
+            },
+            {
+              "name": "customization"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "TaskStatusRequirement",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "task"
+            },
+            {
+              "name": "status"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "TaskZone",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "map"
+            },
+            {
+              "name": "position"
+            },
+            {
+              "name": "outline"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "bottom"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "Trader",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "name"
+            },
+            {
+              "name": "normalizedName"
+            },
+            {
+              "name": "description"
+            },
+            {
+              "name": "resetTime"
+            },
+            {
+              "name": "currency"
+            },
+            {
+              "name": "discount"
+            },
+            {
+              "name": "levels"
+            },
+            {
+              "name": "reputationLevels"
+            },
+            {
+              "name": "barters"
+            },
+            {
+              "name": "cashOffers"
+            },
+            {
+              "name": "imageLink"
+            },
+            {
+              "name": "image4xLink"
+            },
+            {
+              "name": "tarkovDataId"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "TraderLevel",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "level"
+            },
+            {
+              "name": "requiredPlayerLevel"
+            },
+            {
+              "name": "requiredReputation"
+            },
+            {
+              "name": "requiredCommerce"
+            },
+            {
+              "name": "payRate"
+            },
+            {
+              "name": "insuranceRate"
+            },
+            {
+              "name": "repairCostMultiplier"
+            },
+            {
+              "name": "barters"
+            },
+            {
+              "name": "cashOffers"
+            },
+            {
+              "name": "imageLink"
+            },
+            {
+              "name": "image4xLink"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "TraderCashOffer",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "item"
+            },
+            {
+              "name": "minTraderLevel"
+            },
+            {
+              "name": "price"
+            },
+            {
+              "name": "currency"
+            },
+            {
+              "name": "currencyItem"
+            },
+            {
+              "name": "priceRUB"
+            },
+            {
+              "name": "taskUnlock"
+            },
+            {
+              "name": "buyLimit"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "TraderName",
+          "kind": "ENUM",
+          "fields": null,
+          "enumValues": [
+            {
+              "name": "prapor"
+            },
+            {
+              "name": "therapist"
+            },
+            {
+              "name": "fence"
+            },
+            {
+              "name": "skier"
+            },
+            {
+              "name": "peacekeeper"
+            },
+            {
+              "name": "mechanic"
+            },
+            {
+              "name": "ragman"
+            },
+            {
+              "name": "jaeger"
+            },
+            {
+              "name": "ref"
+            }
+          ],
+          "inputFields": null
+        },
+        {
+          "name": "TraderOffer",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "name"
+            },
+            {
+              "name": "normalizedName"
+            },
+            {
+              "name": "trader"
+            },
+            {
+              "name": "minTraderLevel"
+            },
+            {
+              "name": "taskUnlock"
+            },
+            {
+              "name": "buyLimit"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "TraderReputationLevel",
+          "kind": "UNION",
+          "fields": null,
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "TraderReputationLevelFence",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "minimumReputation"
+            },
+            {
+              "name": "scavCooldownModifier"
+            },
+            {
+              "name": "scavCaseTimeModifier"
+            },
+            {
+              "name": "extractPriceModifier"
+            },
+            {
+              "name": "scavFollowChance"
+            },
+            {
+              "name": "scavEquipmentSpawnChanceModifier"
+            },
+            {
+              "name": "priceModifier"
+            },
+            {
+              "name": "hostileBosses"
+            },
+            {
+              "name": "hostileScavs"
+            },
+            {
+              "name": "scavAttackSupport"
+            },
+            {
+              "name": "availableScavExtracts"
+            },
+            {
+              "name": "btrEnabled"
+            },
+            {
+              "name": "btrDeliveryDiscount"
+            },
+            {
+              "name": "btrDeliveryGridSize"
+            },
+            {
+              "name": "btrTaxiDiscount"
+            },
+            {
+              "name": "btrCoveringFireDiscount"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "TraderStanding",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "trader"
+            },
+            {
+              "name": "standing"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "Vendor",
+          "kind": "INTERFACE",
+          "fields": [
+            {
+              "name": "name"
+            },
+            {
+              "name": "normalizedName"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "Query",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "achievements"
+            },
+            {
+              "name": "ammo"
+            },
+            {
+              "name": "archivedItemPrices"
+            },
+            {
+              "name": "barters"
+            },
+            {
+              "name": "bosses"
+            },
+            {
+              "name": "crafts"
+            },
+            {
+              "name": "hideoutStations"
+            },
+            {
+              "name": "historicalItemPrices"
+            },
+            {
+              "name": "item"
+            },
+            {
+              "name": "items"
+            },
+            {
+              "name": "itemPrices"
+            },
+            {
+              "name": "itemCategories"
+            },
+            {
+              "name": "goonReports"
+            },
+            {
+              "name": "handbookCategories"
+            },
+            {
+              "name": "lootContainers"
+            },
+            {
+              "name": "maps"
+            },
+            {
+              "name": "questItems"
+            },
+            {
+              "name": "stationaryWeapons"
+            },
+            {
+              "name": "status"
+            },
+            {
+              "name": "task"
+            },
+            {
+              "name": "tasks"
+            },
+            {
+              "name": "traders"
+            },
+            {
+              "name": "fleaMarket"
+            },
+            {
+              "name": "armorMaterials"
+            },
+            {
+              "name": "playerLevels"
+            },
+            {
+              "name": "prestige"
+            },
+            {
+              "name": "skills"
+            },
+            {
+              "name": "mastering"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "ItemTranslation",
+          "kind": "OBJECT",
+          "fields": [],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "HideoutModule",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "level"
+            },
+            {
+              "name": "itemRequirements"
+            },
+            {
+              "name": "moduleRequirements"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "Quest",
+          "kind": "OBJECT",
+          "fields": [],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "QuestObjective",
+          "kind": "OBJECT",
+          "fields": [],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "QuestRequirement",
+          "kind": "OBJECT",
+          "fields": [],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "QuestRewardReputation",
+          "kind": "OBJECT",
+          "fields": [],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "TraderPrice",
+          "kind": "OBJECT",
+          "fields": [],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "TraderResetTime",
+          "kind": "OBJECT",
+          "fields": [],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "ItemType",
+          "kind": "ENUM",
+          "fields": null,
+          "enumValues": [
+            {
+              "name": "ammo"
+            },
+            {
+              "name": "ammoBox"
+            },
+            {
+              "name": "any"
+            },
+            {
+              "name": "armor"
+            },
+            {
+              "name": "armorPlate"
+            },
+            {
+              "name": "backpack"
+            },
+            {
+              "name": "barter"
+            },
+            {
+              "name": "container"
+            },
+            {
+              "name": "glasses"
+            },
+            {
+              "name": "grenade"
+            },
+            {
+              "name": "gun"
+            },
+            {
+              "name": "headphones"
+            },
+            {
+              "name": "helmet"
+            },
+            {
+              "name": "injectors"
+            },
+            {
+              "name": "keys"
+            },
+            {
+              "name": "markedOnly"
+            },
+            {
+              "name": "meds"
+            },
+            {
+              "name": "mods"
+            },
+            {
+              "name": "noFlea"
+            },
+            {
+              "name": "pistolGrip"
+            },
+            {
+              "name": "preset"
+            },
+            {
+              "name": "provisions"
+            },
+            {
+              "name": "rig"
+            },
+            {
+              "name": "suppressor"
+            },
+            {
+              "name": "wearable"
+            }
+          ],
+          "inputFields": null
+        },
+        {
+          "name": "ItemCategoryName",
+          "kind": "ENUM",
+          "fields": null,
+          "enumValues": [
+            {
+              "name": "Ammo"
+            },
+            {
+              "name": "AmmoContainer"
+            },
+            {
+              "name": "ArmBand"
+            },
+            {
+              "name": "Armor"
+            },
+            {
+              "name": "ArmorPlate"
+            },
+            {
+              "name": "ArmoredEquipment"
+            },
+            {
+              "name": "AssaultCarbine"
+            },
+            {
+              "name": "AssaultRifle"
+            },
+            {
+              "name": "AssaultScope"
+            },
+            {
+              "name": "AuxiliaryMod"
+            },
+            {
+              "name": "Backpack"
+            },
+            {
+              "name": "Barrel"
+            },
+            {
+              "name": "BarterItem"
+            },
+            {
+              "name": "Battery"
+            },
+            {
+              "name": "Bipod"
+            },
+            {
+              "name": "BuildingMaterial"
+            },
+            {
+              "name": "ChargingHandle"
+            },
+            {
+              "name": "ChestRig"
+            },
+            {
+              "name": "CombMuzzleDevice"
+            },
+            {
+              "name": "CombTactDevice"
+            },
+            {
+              "name": "CommonContainer"
+            },
+            {
+              "name": "CompactReflexSight"
+            },
+            {
+              "name": "Compass"
+            },
+            {
+              "name": "Completable"
+            },
+            {
+              "name": "CompoundItem"
+            },
+            {
+              "name": "CultistAmulet"
+            },
+            {
+              "name": "CylinderMagazine"
+            },
+            {
+              "name": "DialogItem"
+            },
+            {
+              "name": "Drink"
+            },
+            {
+              "name": "Drug"
+            },
+            {
+              "name": "Electronics"
+            },
+            {
+              "name": "Equipment"
+            },
+            {
+              "name": "EssentialMod"
+            },
+            {
+              "name": "FaceCover"
+            },
+            {
+              "name": "Flashhider"
+            },
+            {
+              "name": "Flashlight"
+            },
+            {
+              "name": "Flyer"
+            },
+            {
+              "name": "Food"
+            },
+            {
+              "name": "FoodAndDrink"
+            },
+            {
+              "name": "Foregrip"
+            },
+            {
+              "name": "Fuel"
+            },
+            {
+              "name": "FunctionalMod"
+            },
+            {
+              "name": "GasBlock"
+            },
+            {
+              "name": "GearMod"
+            },
+            {
+              "name": "GrenadeLauncher"
+            },
+            {
+              "name": "Handguard"
+            },
+            {
+              "name": "Handgun"
+            },
+            {
+              "name": "Headphones"
+            },
+            {
+              "name": "Headwear"
+            },
+            {
+              "name": "HouseholdGoods"
+            },
+            {
+              "name": "Info"
+            },
+            {
+              "name": "Ironsight"
+            },
+            {
+              "name": "Item"
+            },
+            {
+              "name": "Jewelry"
+            },
+            {
+              "name": "Key"
+            },
+            {
+              "name": "Keycard"
+            },
+            {
+              "name": "Knife"
+            },
+            {
+              "name": "LockingContainer"
+            },
+            {
+              "name": "Lubricant"
+            },
+            {
+              "name": "Machinegun"
+            },
+            {
+              "name": "Magazine"
+            },
+            {
+              "name": "Map"
+            },
+            {
+              "name": "MarkOfTheUnheard"
+            },
+            {
+              "name": "MarksmanRifle"
+            },
+            {
+              "name": "MechanicalKey"
+            },
+            {
+              "name": "MedicalItem"
+            },
+            {
+              "name": "MedicalSupplies"
+            },
+            {
+              "name": "Medikit"
+            },
+            {
+              "name": "Meds"
+            },
+            {
+              "name": "Money"
+            },
+            {
+              "name": "Mount"
+            },
+            {
+              "name": "Multitools"
+            },
+            {
+              "name": "MuzzleDevice"
+            },
+            {
+              "name": "NightVision"
+            },
+            {
+              "name": "Notes"
+            },
+            {
+              "name": "Other"
+            },
+            {
+              "name": "PistolGrip"
+            },
+            {
+              "name": "PlantingKits"
+            },
+            {
+              "name": "PortContainer"
+            },
+            {
+              "name": "PortableRangeFinder"
+            },
+            {
+              "name": "RadioTransmitter"
+            },
+            {
+              "name": "RandomLootContainer"
+            },
+            {
+              "name": "Receiver"
+            },
+            {
+              "name": "Recorder"
+            },
+            {
+              "name": "ReflexSight"
+            },
+            {
+              "name": "RepairKits"
+            },
+            {
+              "name": "Revolver"
+            },
+            {
+              "name": "Rocket"
+            },
+            {
+              "name": "RocketLauncher"
+            },
+            {
+              "name": "SMG"
+            },
+            {
+              "name": "Scope"
+            },
+            {
+              "name": "SearchableItem"
+            },
+            {
+              "name": "Shotgun"
+            },
+            {
+              "name": "Sights"
+            },
+            {
+              "name": "Silencer"
+            },
+            {
+              "name": "SniperRifle"
+            },
+            {
+              "name": "SpecialItem"
+            },
+            {
+              "name": "SpecialScope"
+            },
+            {
+              "name": "SpringDrivenCylinder"
+            },
+            {
+              "name": "StackableItem"
+            },
+            {
+              "name": "Stimulant"
+            },
+            {
+              "name": "Stock"
+            },
+            {
+              "name": "Tapes"
+            },
+            {
+              "name": "ThermalVision"
+            },
+            {
+              "name": "ThrowableWeapon"
+            },
+            {
+              "name": "Tool"
+            },
+            {
+              "name": "UBGL"
+            },
+            {
+              "name": "VisObservDevice"
+            },
+            {
+              "name": "Weapon"
+            },
+            {
+              "name": "WeaponMod"
+            }
+          ],
+          "inputFields": null
+        },
+        {
+          "name": "HandbookCategoryName",
+          "kind": "ENUM",
+          "fields": null,
+          "enumValues": [
+            {
+              "name": "Ammo"
+            },
+            {
+              "name": "AmmoPacks"
+            },
+            {
+              "name": "AssaultCarbines"
+            },
+            {
+              "name": "AssaultRifles"
+            },
+            {
+              "name": "AssaultScopes"
+            },
+            {
+              "name": "AudioTapes"
+            },
+            {
+              "name": "AuxiliaryParts"
+            },
+            {
+              "name": "Backpacks"
+            },
+            {
+              "name": "Barrels"
+            },
+            {
+              "name": "BarterItems"
+            },
+            {
+              "name": "Bipods"
+            },
+            {
+              "name": "BodyArmor"
+            },
+            {
+              "name": "BoltActionRifles"
+            },
+            {
+              "name": "BuildingMaterials"
+            },
+            {
+              "name": "ChargingHandles"
+            },
+            {
+              "name": "Collimators"
+            },
+            {
+              "name": "CompactCollimators"
+            },
+            {
+              "name": "Drinks"
+            },
+            {
+              "name": "ElectronicKeys"
+            },
+            {
+              "name": "Electronics"
+            },
+            {
+              "name": "EnergyElements"
+            },
+            {
+              "name": "Eyewear"
+            },
+            {
+              "name": "Facecovers"
+            },
+            {
+              "name": "FlammableMaterials"
+            },
+            {
+              "name": "FlashhidersBrakes"
+            },
+            {
+              "name": "Flashlights"
+            },
+            {
+              "name": "Food"
+            },
+            {
+              "name": "Foregrips"
+            },
+            {
+              "name": "FunctionalMods"
+            },
+            {
+              "name": "GasBlocks"
+            },
+            {
+              "name": "Gear"
+            },
+            {
+              "name": "GearComponents"
+            },
+            {
+              "name": "GearMods"
+            },
+            {
+              "name": "GrenadeLaunchers"
+            },
+            {
+              "name": "Handguards"
+            },
+            {
+              "name": "Headgear"
+            },
+            {
+              "name": "Headsets"
+            },
+            {
+              "name": "HouseholdMaterials"
+            },
+            {
+              "name": "InfoItems"
+            },
+            {
+              "name": "Injectors"
+            },
+            {
+              "name": "InjuryTreatment"
+            },
+            {
+              "name": "IronSights"
+            },
+            {
+              "name": "Keys"
+            },
+            {
+              "name": "LaserAimingModules"
+            },
+            {
+              "name": "Launchers"
+            },
+            {
+              "name": "LightLaserDevices"
+            },
+            {
+              "name": "MachineGuns"
+            },
+            {
+              "name": "Magazines"
+            },
+            {
+              "name": "Maps"
+            },
+            {
+              "name": "MarksmanRifles"
+            },
+            {
+              "name": "MechanicalKeys"
+            },
+            {
+              "name": "MedicalSupplies"
+            },
+            {
+              "name": "Medication"
+            },
+            {
+              "name": "Medkits"
+            },
+            {
+              "name": "MeleeWeapons"
+            },
+            {
+              "name": "Money"
+            },
+            {
+              "name": "Mounts"
+            },
+            {
+              "name": "MuzzleAdapters"
+            },
+            {
+              "name": "MuzzleDevices"
+            },
+            {
+              "name": "Notes"
+            },
+            {
+              "name": "Optics"
+            },
+            {
+              "name": "Others"
+            },
+            {
+              "name": "Pills"
+            },
+            {
+              "name": "PistolGrips"
+            },
+            {
+              "name": "Pistols"
+            },
+            {
+              "name": "Provisions"
+            },
+            {
+              "name": "ReceiversSlides"
+            },
+            {
+              "name": "Rounds"
+            },
+            {
+              "name": "SecureContainers"
+            },
+            {
+              "name": "Shotguns"
+            },
+            {
+              "name": "Sights"
+            },
+            {
+              "name": "SpecialEquipment"
+            },
+            {
+              "name": "SpecialPurposeSights"
+            },
+            {
+              "name": "SpecialWeapons"
+            },
+            {
+              "name": "StocksChassis"
+            },
+            {
+              "name": "StorageContainers"
+            },
+            {
+              "name": "SubmachineGuns"
+            },
+            {
+              "name": "Suppressors"
+            },
+            {
+              "name": "TacticalComboDevices"
+            },
+            {
+              "name": "TacticalRigs"
+            },
+            {
+              "name": "TaskItems"
+            },
+            {
+              "name": "Throwables"
+            },
+            {
+              "name": "Tools"
+            },
+            {
+              "name": "Valuables"
+            },
+            {
+              "name": "VitalParts"
+            },
+            {
+              "name": "WeaponPartsMods"
+            },
+            {
+              "name": "Weapons"
+            }
+          ],
+          "inputFields": null
+        },
+        {
+          "name": "LanguageCode",
+          "kind": "ENUM",
+          "fields": null,
+          "enumValues": [
+            {
+              "name": "cs"
+            },
+            {
+              "name": "de"
+            },
+            {
+              "name": "en"
+            },
+            {
+              "name": "es"
+            },
+            {
+              "name": "fr"
+            },
+            {
+              "name": "hu"
+            },
+            {
+              "name": "it"
+            },
+            {
+              "name": "ja"
+            },
+            {
+              "name": "ko"
+            },
+            {
+              "name": "pl"
+            },
+            {
+              "name": "pt"
+            },
+            {
+              "name": "ro"
+            },
+            {
+              "name": "ru"
+            },
+            {
+              "name": "sk"
+            },
+            {
+              "name": "tr"
+            },
+            {
+              "name": "zh"
+            }
+          ],
+          "inputFields": null
+        },
+        {
+          "name": "__Schema",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "description"
+            },
+            {
+              "name": "types"
+            },
+            {
+              "name": "queryType"
+            },
+            {
+              "name": "mutationType"
+            },
+            {
+              "name": "subscriptionType"
+            },
+            {
+              "name": "directives"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "__Type",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "kind"
+            },
+            {
+              "name": "name"
+            },
+            {
+              "name": "description"
+            },
+            {
+              "name": "specifiedByURL"
+            },
+            {
+              "name": "fields"
+            },
+            {
+              "name": "interfaces"
+            },
+            {
+              "name": "possibleTypes"
+            },
+            {
+              "name": "enumValues"
+            },
+            {
+              "name": "inputFields"
+            },
+            {
+              "name": "ofType"
+            },
+            {
+              "name": "isOneOf"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "__TypeKind",
+          "kind": "ENUM",
+          "fields": null,
+          "enumValues": [
+            {
+              "name": "SCALAR"
+            },
+            {
+              "name": "OBJECT"
+            },
+            {
+              "name": "INTERFACE"
+            },
+            {
+              "name": "UNION"
+            },
+            {
+              "name": "ENUM"
+            },
+            {
+              "name": "INPUT_OBJECT"
+            },
+            {
+              "name": "LIST"
+            },
+            {
+              "name": "NON_NULL"
+            }
+          ],
+          "inputFields": null
+        },
+        {
+          "name": "__Field",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "name"
+            },
+            {
+              "name": "description"
+            },
+            {
+              "name": "args"
+            },
+            {
+              "name": "type"
+            },
+            {
+              "name": "isDeprecated"
+            },
+            {
+              "name": "deprecationReason"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "__InputValue",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "name"
+            },
+            {
+              "name": "description"
+            },
+            {
+              "name": "type"
+            },
+            {
+              "name": "defaultValue"
+            },
+            {
+              "name": "isDeprecated"
+            },
+            {
+              "name": "deprecationReason"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "__EnumValue",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "name"
+            },
+            {
+              "name": "description"
+            },
+            {
+              "name": "isDeprecated"
+            },
+            {
+              "name": "deprecationReason"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "__Directive",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "name"
+            },
+            {
+              "name": "description"
+            },
+            {
+              "name": "isRepeatable"
+            },
+            {
+              "name": "locations"
+            },
+            {
+              "name": "args"
+            }
+          ],
+          "enumValues": null,
+          "inputFields": null
+        },
+        {
+          "name": "__DirectiveLocation",
+          "kind": "ENUM",
+          "fields": null,
+          "enumValues": [
+            {
+              "name": "QUERY"
+            },
+            {
+              "name": "MUTATION"
+            },
+            {
+              "name": "SUBSCRIPTION"
+            },
+            {
+              "name": "FIELD"
+            },
+            {
+              "name": "FRAGMENT_DEFINITION"
+            },
+            {
+              "name": "FRAGMENT_SPREAD"
+            },
+            {
+              "name": "INLINE_FRAGMENT"
+            },
+            {
+              "name": "VARIABLE_DEFINITION"
+            },
+            {
+              "name": "SCHEMA"
+            },
+            {
+              "name": "SCALAR"
+            },
+            {
+              "name": "OBJECT"
+            },
+            {
+              "name": "FIELD_DEFINITION"
+            },
+            {
+              "name": "ARGUMENT_DEFINITION"
+            },
+            {
+              "name": "INTERFACE"
+            },
+            {
+              "name": "UNION"
+            },
+            {
+              "name": "ENUM"
+            },
+            {
+              "name": "ENUM_VALUE"
+            },
+            {
+              "name": "INPUT_OBJECT"
+            },
+            {
+              "name": "INPUT_FIELD_DEFINITION"
+            }
+          ],
+          "inputFields": null
+        }
+      ]
+    }
+  }
+}
