@@ -193,22 +193,6 @@ const TASKS_REF_QUERY = `
              wikiLink
           }
         }
-        ... on TaskObjectiveZone {
-          zone {
-            id
-            name
-            position {
-              x
-              y
-              z
-            }
-            map {
-              id
-              name
-              normalizedName
-            }
-          }
-        }
         ... on TaskObjectiveMark {
            requiredKeys {
              id
